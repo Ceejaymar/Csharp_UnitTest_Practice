@@ -21,7 +21,6 @@ namespace TestNinjas.UnitTests
 		}
 
 		[Test]
-		[Ignore("Because I wanted to")]
 		public void Add_WhenCalled_SumOfArgs()
 		{
 			var result = _math.Add(1, 2);
@@ -40,7 +39,8 @@ namespace TestNinjas.UnitTests
 			Assert.That(result, Is.EqualTo(ExpectedResult));
 		}
 
-		/*[Test]
+		[Test]
+		[Ignore("Unnesecary test, keeping for reference")]
 		public void Max_FirstArgumentIsGreater_ReturnTheFirstArgument()
 		{
 			var result = _math.Max(2, 1);
@@ -49,6 +49,7 @@ namespace TestNinjas.UnitTests
 		}
 
 		[Test]
+		[Ignore("Unnecessary test, keeping for reference")]
 		public void Max_SecondArgumentIsGreater_ReturnTheSecondArgument()
 		{
 			var result = _math.Max(1, 2);
@@ -57,11 +58,12 @@ namespace TestNinjas.UnitTests
 		}
 
 		[Test]
+		[Ignore("unnecessary test, keeping for reference")]
 		public void Max_ArgumentsAreEqual_ReturnsTheSameArgument()
 		{
 			var result = _math.Max(1, 1);
 
 			Assert.That(result, Is.EqualTo(1));
-		}*/
+		}
 	}
 }

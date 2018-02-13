@@ -21,6 +21,7 @@ namespace TestNinjas.UnitTests
 		}
 
 		[Test]
+		[Ignore("Because I wanted to")]
 		public void Add_WhenCalled_SumOfArgs()
 		{
 			var result = _math.Add(1, 2);
@@ -28,7 +29,7 @@ namespace TestNinjas.UnitTests
 			Assert.That(result, Is.EqualTo(3));
 		}
 
-		[Test] //Parameterized tests condense redundant code
+		[Test] //Parameterized tests condense redundant code. (NUnit)
 		[TestCase(2, 1, 2)]
 		[TestCase(1, 2, 2)]
 		[TestCase(1, 1, 1)]

@@ -80,6 +80,9 @@ namespace TestNinjas.UnitTests
 			//Assert.That(result, Does.Contain(3));
 
 			Assert.That(result, Is.EquivalentTo(new [] { 1, 3, 5 })); // This line is equivalent to the 3 above
+
+			Assert.That(result, Is.Ordered);
+			Assert.That(result, Is.Unique);
 		}
 	}
 }

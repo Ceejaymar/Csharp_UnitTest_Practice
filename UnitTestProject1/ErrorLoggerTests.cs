@@ -32,7 +32,7 @@ namespace TestNinja.UnitTests
 			//logger.Log(error);
 
 			//need to wrap in a delegate when testing for argument exceptions
-			Assert.That(() => logger.Log(error), Throws.ArgumentNullException); 
+			Assert.That(() => logger.Log(error), Throws.ArgumentNullException);
 		}
 
 		[Test]

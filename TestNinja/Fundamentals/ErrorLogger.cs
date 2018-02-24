@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 
 namespace TestNinja.Fundamentals
 {
@@ -7,19 +6,26 @@ namespace TestNinja.Fundamentals
     {
         public string LastError { get; set; }
 
-        public event EventHandler<Guid> ErrorLogged; 
-        
+        public event EventHandler<Guid> ErrorLogged;
+
+		private Guid _errorId;
+
         public void Log(string error)
         {
             if (String.IsNullOrWhiteSpace(error))
                 throw new ArgumentNullException();
                 
-            LastError = error; 
-            
-            // Write the log to a storage
-            // ...
+            LastError = error;
 
-            ErrorLogged?.Invoke(this, Guid.NewGuid());
+			// Write the log to a storage
+			// ...
+			//OnErrorLogged(Guid.NewGuid()); 
+			OnErrorLogged(Guid.NewGuid());
         }
+
+		protected virtual void OnErrorLogged(Guid errorId)
+		{
+			ErrorLogged?.Invoke(this, errorId);
+		}
     }
 }
